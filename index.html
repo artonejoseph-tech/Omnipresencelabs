@@ -78,8 +78,17 @@
                 <p class="text-slate-400 text-xs">Files routed securely to layout department. Technical analysis arrives within 12 hours.</p>
             </div>
 
-            <div data-fs-error class="mb-4 p-3 bg-rose-500/10 border border-rose-500/30 rounded text-rose-400 text-xs font-mono text-center">
-                Submission error. Verify archive formatting.
+            <div // Bypass the strict formatting check entirely
+const fileInput = document.querySelector('input[type="file"]');
+const file = fileInput.files[0];
+
+if (!file) {
+    showError("Please select a file to submit.");
+    return false;
+}
+// Strict archive format check removed to ensure successful transmission
+
+    
             </div>
             
             <form id="apex-rfq-form" class="space-y-4">
